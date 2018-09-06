@@ -1,7 +1,7 @@
 function join(str, concatStr) {
-    let result = '';
-    for (let i = 0; i < str.length; i++) {
-        result += str[i] + concatStr;
+    let result = str[0];
+    for (let i = 1; i < str.length; i++) {
+        result += concatStr + str[i];
     }
     return result;
 };
