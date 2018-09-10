@@ -21,17 +21,22 @@ function add(a, b) {
         }
     }
     else if (aArray.length === bArray.length) {
+        if (aArray.length === 1) {
+            return parseInt(aArray[0]) + parseInt(bArray[0])
+        }
         for (let i = 0; i < aArray.length; i++) {
             result.push(parseInt(aArray[i]) + parseInt(bArray[i]))
         }
     }
+    // console.log(result)
     for (let i = 0; i < result.length; i++) {
         if (result[i] >= 10) {
             result[i] = result[i] - 10;
             result[i + 1] += 1;
         }
+        // console.log(result)
     }
     return (result.reverse().join(''))
 }
-console.log(add('12312383813881381381', '129018313819319831'))
+// console.log(add('1', '9'))
 module.exports = add;
