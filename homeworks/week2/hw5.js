@@ -22,7 +22,7 @@ function add(a, b) {
     }
     else if (aArray.length === bArray.length) {
         if (aArray.length === 1) {
-            return parseInt(aArray[0]) + parseInt(bArray[0])
+            return (parseInt(aArray[0]) + parseInt(bArray[0])).toString()
         }
         for (let i = 0; i < aArray.length; i++) {
             result.push(parseInt(aArray[i]) + parseInt(bArray[i]))
@@ -38,5 +38,5 @@ function add(a, b) {
     }
     return (result.reverse().join(''))
 }
-// console.log(add('1', '9'))
+// console.log(add('9', '9'))
 module.exports = add;
