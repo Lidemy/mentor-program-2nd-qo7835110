@@ -2,8 +2,6 @@ function add(a, b) {
     let result = [];
     let aArray = a.split('').reverse();
     let bArray = b.split('').reverse();
-    console.log('aArray:' + aArray);
-    console.log('bArray:' + bArray);
     if (aArray.length > bArray.length) {
         for (let i = 0; i < aArray.length; i++) {
             if (bArray[i] === undefined) {
@@ -25,7 +23,6 @@ function add(a, b) {
             result.push(parseInt(aArray[i]) + parseInt(bArray[i]))
         }
     }
-    // console.log(result)
     for (let i = 0; i < result.length; i++) {
         if (result[i] >= 10) {
             if (result[i + 1] === undefined) {
@@ -37,9 +34,7 @@ function add(a, b) {
                 result[i + 1] += 1;
             }
         }
-        console.log(result)
     }
     return (result.reverse().join(''))
 }
-console.log(add('9', '9'))
 module.exports = add;
