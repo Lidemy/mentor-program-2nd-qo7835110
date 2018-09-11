@@ -21,9 +21,6 @@ function add(a, b) {
         }
     }
     else if (aArray.length === bArray.length) {
-        if (aArray.length === 1) {
-            return (parseInt(aArray[0]) + parseInt(bArray[0])).toString()
-        }
         for (let i = 0; i < aArray.length; i++) {
             result.push(parseInt(aArray[i]) + parseInt(bArray[i]))
         }
@@ -31,12 +28,18 @@ function add(a, b) {
     // console.log(result)
     for (let i = 0; i < result.length; i++) {
         if (result[i] >= 10) {
-            result[i] = result[i] - 10;
-            result[i + 1] += 1;
+            if (result[i + 1] === undefined) {
+                result[i] = result[i] - 10
+                result[i + 1] = 1
+            }
+            else {
+                result[i] = result[i] - 10;
+                result[i + 1] += 1;
+            }
         }
-        // console.log(result)
+        console.log(result)
     }
     return (result.reverse().join(''))
 }
-// console.log(add('9', '9'))
+console.log(add('9', '9'))
 module.exports = add;
