@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h2>Navbar</h2>
+        <span class="home"><a href="#">Home</a></span>
+        <span class="link"><a href="#">Link</a></span>
+    </header>
+    <main>
+        <div class="focus">
+            <div>
+                <h1>Hello,world!</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae incidunt, sapiente ipsam facilis
+                    alias
+                    adipisci consectetur nihil, laborum minus asperiores deserunt officia autem. Dolore voluptate
+                    animi,
+                    voluptas quae placeat doloremque?</p>
+                <button>Lean more >></button>
+            </div>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    <h2>Heading</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo officiis illo distinctio rerum
+                        nulla et, quia ullam voluptatibus sapiente, tempora odit deleniti cumque atque corporis
+                        consequuntur provident, voluptas totam enim.</p>
+                    <button>
+                        View details >>
+                    </button>
+                </li>
+                <li>
+                    <h2>Heading</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo officiis illo distinctio rerum
+                        nulla et, quia ullam voluptatibus sapiente, tempora odit deleniti cumque atque corporis
+                        consequuntur provident, voluptas totam enim.</p>
+                    <button>
+                        View details >>
+                    </button>
+                </li>
+                <li>
+                    <h2>Heading</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo officiis illo distinctio rerum
+                        nulla et, quia ullam voluptatibus sapiente, tempora odit deleniti cumque atque corporis
+                        consequuntur provident, voluptas totam enim.</p>
+                    <button>
+                        View details >>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <span>© Compony 2017-2018</span>
+    </footer>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        body {
+            margin: 0 auto;
+        }
+
+        header {
+
+            display: flex;
+            align-items: center;
+            background: rgb(58, 56, 56)
+        }
+
+        header h2 {
+            color: azure;
+            margin: 12px 8px;
+        }
+
+        header span a {
+            color: gray;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 12px;
+            transition: all 0.3s;
+        }
+
+        header span a:hover {
+            color: rgb(250, 243, 243);
+            font-size: 25px;
+        }
+
+        .focus {
+            background: #e9ecef;
+            padding: 40px 0;
+            margin: 0 auto;
+        }
+
+        .focus>div {
+            margin: 0 auto;
+            width: 70%;
+        }
+
+        .focus p {
+            display: block;
+        }
+
+        .focus h1 {
+            margin: 0px auto;
+            font-size: 72px;
+        }
+
+        .focus button {
+            margin: 0 auto;
+            background: rgb(63, 167, 236);
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 16px;
+            transition: background 0.2s ease-in;
+        }
+
+        .focus button:active {
+            transform: translateY(4px);
+        }
+
+        .focus button:hover {
+            background: rgb(57, 144, 202)
+        }
+
+        .content {
+            margin: 40px auto;
+        }
+
+        .content h2 {
+            font-size: 32px;
+        }
+
+        .content ul {
+            display: flex;
+            margin: 0 auto;
+            max-width: 70%;
+            list-style-type: none;
+            padding: 0;
+            transition: background 0.2s
+        }
+
+        .content button {
+            background: rgb(104, 101, 101);
+            color: white;
+            border-radius: 4px;
+            border: none;
+            padding: 12px
+        }
+
+        .content button:hover {
+            background: rgb(83, 82, 82);
+
+        }
+
+        footer {
+            max-width: 70%;
+            border-top: solid 1px rgb(209, 206, 206);
+            margin: 20px auto;
+            margin-bottom: 0;
+            padding-top: 20px;
+        }
+
+
+        @media(max-width:425px) {
+            .content ul {
+                display: block;
+            }
+
+            .focus h1 {
+                font-size: 48px;
+            }
+        }
+    </style>
+</body>
+
+</html>
