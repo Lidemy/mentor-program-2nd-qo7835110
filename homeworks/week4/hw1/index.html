@@ -42,6 +42,7 @@
             margin: 40px auto;
             padding: 10px;
             border-radius: 8px;
+            background: gray;
         }
         .calultor__input{
             width: 450px;
@@ -50,6 +51,7 @@
             margin-bottom:10px;
             font-size:48px;
             text-align:right;
+            background: white;
         }
         .calulatou__buttons{
             display: flex;
@@ -68,7 +70,7 @@
             border:1px solid rgba(219, 200, 200, 0.664);
             width: 94px;
             height: 40px;
-            margin:1px;
+            margin: 10px 1px;
             padding: 1px 6px;
             background: white;
             transition: transform 0.2s;
@@ -112,16 +114,16 @@
             count_sign = '';
             q('.calultor__input').textContent = '';
         })
+        //監聽等於
+        q('#equal').addEventListener('click', function () {
+            equal();
+        })
         //監聽運算鍵
         document.querySelectorAll('.count_sign').forEach(function (el) {
             el.addEventListener('click', function () {
                 count_sign = this.value;
                 count();
             })
-        })
-        //監聽等於
-        q('#equal').addEventListener('click', function () {
-            equal();
         })
         //運算
         function count() {
