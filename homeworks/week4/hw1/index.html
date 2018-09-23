@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="all.js" defer async></script>
 </head>
 
 <body>
@@ -36,7 +37,7 @@
     </div>
 
     <style>
-        .calulator{
+        .calulator {
             width: 450px;
             border: 4px solid rgba(131, 129, 125, 0.568);
             margin: 40px auto;
@@ -44,30 +45,35 @@
             border-radius: 8px;
             background: gray;
         }
-        .calultor__input{
+
+        .calultor__input {
             width: 450px;
             height: 56px;
             border: rgba(128, 128, 128, 0.253) 1px solid;
-            margin-bottom:10px;
-            font-size:48px;
-            text-align:right;
+            margin-bottom: 10px;
+            font-size: 48px;
+            text-align: right;
             background: white;
         }
-        .calulatou__buttons{
+
+        .calulatou__buttons {
             display: flex;
             flex-flow: wrap;
             justify-content: space-between;
         }
-        .first_line{
+
+        .first_line {
             display: flex;
             justify-content: space-between;
             width: 100%;
         }
-        #equal{
+
+        #equal {
             background: orange;
         }
-        button{
-            border:1px solid rgba(219, 200, 200, 0.664);
+
+        button {
+            border: 1px solid rgba(219, 200, 200, 0.664);
             width: 94px;
             height: 40px;
             margin: 10px 1px;
@@ -76,95 +82,11 @@
             transition: transform 0.2s;
             border-radius: 8px;
         }
-        button:active{
+
+        button:active {
             transform: scale(1.1)
         }
     </style>
-
-    <script type="text/javascript">
-        let first_num = '';
-        let sec_num = '';
-        let count_sign = '';
-        let screen = '';
-        //設定 querySelector 的簡稱
-        let q = function (n) {
-            return document.querySelector(n)
-        };
-        //監聽數字按鍵
-        document.querySelectorAll('.num_btn').forEach(function (el) {
-            el.addEventListener('click', function () {
-                screen += this.value;
-                if (screen.length > 15) {
-                    alert('超過太多我算不出來');
-                    screen = '';
-                }
-                if (first_num !== '' && sec_num !== '') {
-                    sec_num = '';
-                    screen = '';
-                    screen += this.value;
-                }
-                q('.calultor__input').textContent = screen;
-            })
-        })
-        //AC
-        q('#AC').addEventListener('click', function () {
-            screen = '';
-            first_num = '';
-            sec_num = '';
-            count_sign = '';
-            q('.calultor__input').textContent = '';
-        })
-        //監聽等於
-        q('#equal').addEventListener('click', function () {
-            equal();
-        })
-        //監聽運算鍵
-        document.querySelectorAll('.count_sign').forEach(function (el) {
-            el.addEventListener('click', function () {
-                count_sign = this.value;
-                count();
-            })
-        })
-        //運算
-        function count() {
-            if (first_num === '') {
-                first_num = screen;
-                q('.calultor__input').textContent = '';
-                screen = '';
-            }
-            else if (first_num !== '') {
-                equal();
-            }
-        }
-        function equal() {
-            sec_num = screen;
-            switch (count_sign) {
-                case '+':
-                    q('.calultor__input').textContent = parseFloat(first_num) + parseFloat(sec_num);
-                    screen = parseFloat(first_num) + parseFloat(sec_num);
-                    first_num = screen;
-                    break;
-                case '-':
-                    q('.calultor__input').textContent = parseFloat(first_num) - parseFloat(sec_num);
-                    screen = parseFloat(first_num) - parseFloat(sec_num);
-                    first_num = screen;
-                    break;
-                case '*':
-                    q('.calultor__input').textContent = parseFloat(first_num) * parseFloat(sec_num);
-                    screen = parseFloat(first_num) * parseFloat(sec_num);
-                    first_num = screen;
-                    break;
-
-                    break;
-                case '÷':
-                    q('.calultor__input').textContent = parseFloat(first_num) / parseFloat(sec_num);
-                    screen = parseFloat(first_num) / parseFloat(sec_num);
-                    first_num = screen;
-                    break;
-            }
-        }
-
-    </script>
 </body>
 
 </html>
