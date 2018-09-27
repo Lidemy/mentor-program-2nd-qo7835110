@@ -5,7 +5,9 @@ let must_todo = [...form].filter(function (e) {
 let must_todo_type = must_todo.map(function (e) {
     return e.name;
 })
-
+let all_name = [...form].map(function (e) {
+    return e.name;
+})
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     for (let i = 0; i < must_todo.length; i++) {
@@ -20,9 +22,10 @@ form.addEventListener('submit', function (e) {
             must_todo[i].parentNode.lastChild.previousSibling.style.display = 'none'
         }
     }
-    for (let i = 0; i < must_todo.length; i++) {
-        console.log(`${must_todo_type[i]}:${form[must_todo_type[i]].value}`)
+    for (let i = 0; i < form.length - 1; i++) {
+        console.log(`${form[i].name}=${form[all_name[i]].value}`)
     }
+    alert('成功');
 });
 
 
