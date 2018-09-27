@@ -24,25 +24,25 @@
                 <p class="must">*必填</p>
             </div>
             <form action="">
-                <div class="block">
+                <div class="block must_todo">
                     <p class="title">電子郵件地址 <span class="must">*</span></p>
                     <input type="email" name="email" id="email" placeholder="您的信箱">
                     <p class="warning_tips">這是必填問題</p>
                 </div>
-                <div class="block">
+                <div class="block must_todo">
                     <p class="title">暱稱 <span class="must">*</span></p>
                     <p class="title_description">該怎麼稱呼您</p>
                     <input type="text" name="name" id="name" placeholder="您的名子">
                     <p class="warning_tips">這是必填問題</p>
                 </div>
-                <div class="block">
+                <div class="block must_todo">
                     <p class="title">報名類型 <span class="must">*</span></p>
                     <input type="radio" name="level" id="engineer" value="engineer"><label for="engineer">工程師培養班（每週付出四十小時，從零培養到工程師，學費是一個月薪水）</label>
                     <br>
                     <input type="radio" name="level" id="junior" value="junior"><label for="junior">業餘班（依照個人目標訂立學習計畫，學費一萬五千元）</label>
                     <p class="warning_tips">這是必填問題</p>
                 </div>
-                <div class="block">
+                <div class="block must_todo">
                     <p class="title">是否有程式相關背景？ <span class="must">*</span></p>
                     <p class="title_description">範例：無、高中時候學過C++、學過一點網頁前端、目前在資策會上課...</p>
                     <input type="text" name="code_exp" id="code_exp">
@@ -127,7 +127,7 @@
         }
 
         .warning {
-            background: rgba(247, 156, 164, 0.596);
+            background: rgba(209, 146, 151, 0.596);
         }
 
         .warning_tips {
