@@ -9,7 +9,6 @@ let all_name = [...form].map(function (e) {
     return e.name;
 })
 form.addEventListener('submit', function (e) {
-    e.preventDefault();
     for (let i = 0; i < must_todo.length; i++) {
         if (!form[must_todo_type[i]].value) {
             e.preventDefault();
