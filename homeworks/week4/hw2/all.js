@@ -14,7 +14,7 @@ let all_name = [...form].map(function (e) {
 //監聽 submit event
 form.addEventListener('submit', function (e) {
     for (let i = 0; i < must_todo.length; i++) {
-        if (!form[must_todo_type[i]].value) {
+        if (!form[must_todo_type[i]].value.trim()) {
             e.preventDefault();
             must_todo[i].parentNode.style.background = 'rgba(209, 146, 151, 0.596)';
             must_todo[i].parentNode.lastChild.previousSibling.style.display = 'block';
