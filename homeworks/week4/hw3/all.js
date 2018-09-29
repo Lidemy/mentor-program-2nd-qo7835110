@@ -6,7 +6,6 @@ xhr.setRequestHeader('Client-ID', 'ny6wc2vmq495cxmvtd53e4w1khgtzk');
 xhr.send(null);
 xhr.onload = function () {
     let channel = JSON.parse(xhr.response).streams;
-    console.log(channel);
     let streamer_channel = '';
     for (let i = 0; i < channel.length; i++) {
         streamer_channel += `
