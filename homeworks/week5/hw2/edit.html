@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="edit.php" method="POST" class="edit_form">
+        <h1>新增文章</h1>
+        <input type="text" name="nickname" id="nickname" placeholder="暱稱">
+        <br>
+        <textarea name="content" id="content" cols="30" rows="20" placeholder="內容"></textarea>
+        <br>
+        <input type="submit" value="send">
+    </form>
+</body>
+<style>
+    .edit_form {
+        margin: 0 auto;
+        width: 500px;
+        background: orange;
+        text-align: center;
+    }
+
+    #nickname {
+        margin: 10px
+    }
+</style>
+<script>
+    let cookie = document.cookie;
+    console.log(cookie);
+    document.querySelector('.edit_form').addEventListener('submit', function (e) {
+        let nickname = document.querySelector('#nickname').value.trim();
+        let content = document.querySelector('#content').value.trim();
+        if (!nickname || !content) {
+            e.preventDefault();
+            alert('空白');
+        }
+    })
+</script>
+
+</html>

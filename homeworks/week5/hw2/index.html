@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="title">留言板</h1>
+        <div class="content__main">
+            <div class="content__main__form">
+                <form action="index.php" method="POST" id="content__main__form">
+                    <input type="text" name="nickname__main" id="nickname__main" placeholder="暱稱"><br>
+                    <textarea name="message__main" id="message__main" cols="50" rows="10" placeholder="留言"></textarea><br>
+                    <input type="submit" value="send">
+                </form>
+            </div>
+        </div>
+        <div class="content__respond">
+            <div class="content__respond__message">
+                <div class="content__respond__message__main">
+                    <?php 
+                        $result = $conn->query('SELECT * FROM `comments`');
+                        if ($result->num_rows > 0){
+                            while ($row = $result->fetch_assoc()){
+                    ?>
+                    <span>
+                        <?php echo $row['user_id']; ?></span>
+                    <span>
+                        <?php echo $row['timestamp']; ?></span>
+                    <p>
+                        <?php echo $row['content_id']; ?>
+                    </p>
+                    <div class="content__respond__respond">
+                        <div>
+                            <span>name</span>
+                            <span>time</span>
+                            <p>123123123123</p>
+                        </div>
+                    </div>
+                </div>
+                <span><a href="#">回應留言</a></span>
+                <form action="index.php" method="POST" class="content__respond__respond__form">
+                    <input type="text" name="respond_nickname" id="respond_nickname" placeholder="暱稱">
+                    <br>
+                    <textarea name="respond_message" id="respond_message" cols="40" rows="5" placeholder="留言"></textarea>
+                    <br>
+                    <input type="submit" value="send">
+                </form>
+                <?php
+                            }
+                        }
+                    ?>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .content {
+        margin: 0 auto;
+        width: 960px;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .content__main {
+        margin: 10px auto;
+        width: auto;
+        border: 1px solid red;
+        padding: 10px;
+    }
+
+    .content__main>* {
+        text-align: center;
+    }
+
+    .content__respond {
+        border: solid 1px blue;
+        width: 960px;
+        padding: 10px;
+    }
+
+    .content__respond>* {
+        text-align: center;
+    }
+
+    .content__respond__respond {
+        width: 80%;
+        border: 1px solid pink;
+        margin: 20px auto;
+        background: gray;
+    }
+
+    .content__respond__message {
+        border: black solid 1px;
+        margin-bottom: 10px;
+    }
+
+    .content__respond__message__main {
+        background: orange;
+    }
+
+    .content__respond__message p {
+        border-top: 2px solid red;
+        border-bottom: 2px solid gray;
+        padding-top: 5px;
+        padding: 10px;
+    }
+
+
+    .content__respond__respond__form {
+        border: green 1px solid;
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+<script>
+    document.querySelector('#content__main__form').addEventListener('submit', function (e) {
+        let nickname__main = document.querySelector('#nickname__main').value.trim();
+        let message__main = document.querySelector('#message__main').value.trim();
+        if (!nickname__main || !message__main) {
+            e.preventDefault();
+            alert('空白');
+        }
+    })
+</script>
+
+</html>
