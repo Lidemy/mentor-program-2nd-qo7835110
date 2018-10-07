@@ -1,6 +1,6 @@
 <?php
     require_once('conn.php');
-    $sql = "SELECT comments.id, comments.user_id,comments.article,comments.timestamp, users.nickname FROM comments LEFT JOIN users ON comments.user_id = users.user_id ORDER BY timestamp  DESC" ;
+    $sql = "SELECT qo7835110_comments.id, qo7835110_comments.user_id,qo7835110_comments.article,qo7835110_comments.timestamp, qo7835110_users.nickname FROM qo7835110_comments LEFT JOIN qo7835110_users ON qo7835110_comments.user_id = qo7835110_users.user_id ORDER BY timestamp  DESC" ;
     $result = $conn->query($sql);
     if (isset($_COOKIE['user_id'])){
         $cookie = $_COOKIE['user_id'];
@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>史萊姆的第8個家</title>
 </head>
 
 <body>
@@ -41,6 +41,9 @@
                 <li class="content__nav__list__logout"><a href="logout.php">登出</a></li>
             </ul>
         </nav>
+        <div class="profile">
+            <p>你好! <?php echo $cookie?></p>
+        </div>
         <h1 class="article_ist_tittle">文章列表</h1>
         <ul class="content__article_list">
         <?php 
@@ -56,7 +59,7 @@
                             $respond_name = $_POST['respond_name'];
                             $respond_content = $_POST['respond_content'];
                             $article_id = $_POST['article_id'];
-                            $sql_respond = "INSERT INTO `comments_responds`(`id`, `article_id`, `nickname`, `article_respond`, `timestamp`) VALUES (null, '$article_id','$respond_name','$respond_content',null)";
+                            $sql_respond = "INSERT INTO `qo7835110_comments_responds`(`id`, `article_id`, `nickname`, `article_respond`, `timestamp`) VALUES (null, '$article_id','$respond_name','$respond_content',null)";
                             if($conn->query($sql_respond)){
                                 echo "成功";
                                 unset($_POST);
@@ -67,7 +70,7 @@
                                 echo "失敗";
                             }
                         }
-                        $sql_respond_content = "SELECT `nickname`, `article_respond` FROM `comments_responds` WHERE comments_responds.article_id = '$row[id]' ";
+                        $sql_respond_content = "SELECT `nickname`, `article_respond` FROM `qo7835110_comments_responds` WHERE qo7835110_comments_responds.article_id = '$row[id]' ";
                         $result_respond = $conn->query($sql_respond_content);
                         if ($result_respond->num_rows >0){
                             while ($row_respond = $result_respond->fetch_assoc()){
@@ -88,7 +91,9 @@
                     <br>
                     <textarea name="respond_content" class="respond_content" cols="50" rows="5" placeholder="回應"></textarea>
                     <input type="hidden" name="article_id" value="<?php echo $row['id'] ?>">
-                    <input type="submit" value="send" class="respond_btn">
+                    <div class="respond_form__btn">
+                        <input type="submit" value="send" class="respond_btn">
+                    </div>
                 </form>
             </li>
             <?php
@@ -180,8 +185,11 @@ body{
     width: 80%;
     margin:20px auto;
     font-size: 26px;
-    
 }
+.respond_name{
+    margin-bottom: 10px;
+}
+
 </style>
 <script>
     let cookie = '<?php echo $cookie ?>';

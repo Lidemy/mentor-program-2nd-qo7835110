@@ -3,7 +3,7 @@
     if (isset($_POST['user_id']) && isset($_POST['user_password'])){
         $user_id = $_POST['user_id'];
         $user_password = $_POST['user_password'];
-        $sql = "SELECT * FROM `users` WHERE `user_id` = '$user_id' AND `password` = '$user_password'";
+        $sql = "SELECT * FROM `qo7835110_users` WHERE `user_id` = '$user_id' AND `password` = '$user_password'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0){
             echo "成功";

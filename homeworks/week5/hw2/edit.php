@@ -6,8 +6,8 @@
             $nickname = $_POST['nickname'];
             $content = $_POST['content'];
         }
-        $sql = "UPDATE `users` SET `nickname`= '$nickname' WHERE `user_id` = '$cookie_id'";
-        $sql_addarticle = "INSERT INTO `comments`(`id`, `user_id`, `article`, `timestamp`) VALUES (null, '$cookie_id', '$content',null)";
+        $sql = "UPDATE `qo7835110_users` SET `nickname`= '$nickname' WHERE `user_id` = '$cookie_id'";
+        $sql_addarticle = "INSERT INTO `qo7835110_comments`(`id`, `user_id`, `article`, `timestamp`) VALUES (null, '$cookie_id', '$content',null)";
         if($conn->query($sql) && $conn->query($sql_addarticle)){
             header('Location: index.php');
         }
