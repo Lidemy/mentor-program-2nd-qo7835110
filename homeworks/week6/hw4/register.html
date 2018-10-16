@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="register.php" method="POST" class="register_form">
+        <h1>註冊</h1>
+        帳號:<input type="text" name="user_id_register" id="user_id_register">
+        <br>
+        密碼:<input type="password" name="user_password_register" id="user_password_register">
+        <br>
+        <input type="submit" value="註冊">
+        <button><a href="login.html">登入</a></button>
+    </form>
+    <style>
+        .register_form {
+            margin: 0 auto;
+            width: 500px;
+            background: orange;
+            text-align: center;
+        }
+    </style>
+    <script>
+        document.querySelector('.register_form').addEventListener('submit', function (e) {
+            let user_id_register = document.querySelector('#user_id_register').value.trim();
+            let user_password_register = document.querySelector('#user_password_register').value.trim();
+            if (!user_id_register || !user_password_register) {
+                e.preventDefault();
+                alert('空白');
+            }
+        })
+    </script>
+</body>
+
+</html>
