@@ -1,0 +1,9 @@
+.board{
+    margin: 0 auto;
+}
+.board__keyin{
+    margin: 20px auto;
+}
+.article{
+    display: inline;
+}
