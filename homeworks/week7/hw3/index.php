@@ -70,17 +70,8 @@
             ?>
                 <li class="content__article_list_article col-12">
                     <div class="content__article_list_article__control ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <?php if($row["user_id"] == $user_id){echo "<a class='content__article_list_article_delete border border-secondary rounded text-dark' data-id=$row[id]>刪除</a>";} ?>
-                            </li>
-                            <li class="nav-item">
-                                <?php if($row["user_id"] == $user_id){echo "<a class='content__article_list_article_edit border border-secondary rounded text-dark' href= edit_article.php?id=$row[id]>編輯</a>";} ?>
-                            </li>
-                        </ul>
+                                <?php if($row["user_id"] == $user_id){echo "<a class='content__article_list_article_edit btn border-secondary rounded text-dark' href= edit_article.php?id=$row[id]>編輯</a>";} ?>
+                                <?php if($row["user_id"] == $user_id){echo "<a class='content__article_list_article_delete btn border-secondary rounded text-dark' data-id=$row[id]>刪除</a>";} ?>
                     </div>
                     <h5  class="content__article_list_article_profile font-weight-bold">作者(<?php echo htmlspecialchars($row["user_id"], ENT_QUOTES, 'utf-8') ?>): <span class="content__article_list_article_profile__name"><?php echo $row["nickname"];?></span> 時間 : <?php echo $row["timestamp"] ?></h5>
                     <p class="content__article_list_article_content"><?php echo htmlspecialchars($row["article"], ENT_QUOTES,'utf-8') ?></p>
@@ -258,7 +249,7 @@
                 success: function (response) {
                     console.log(response);
                     if(response === 'success'){
-                        $(e.target).parent().parent().parent().parent().remove();
+                        $(e.target).parent().parent().remove();
                     }
                 }
             });
