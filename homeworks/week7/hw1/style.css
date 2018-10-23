@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+}
+div{
+    display: inline-block;
+}
+.content{
+    background: blue;
+}
+.container{
+    width:960px;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.col-12{
+    width:100%;
+    background: red;
+}
+.col-11{
+    width:91.6666%;
+    background: red;
+}
+.col-10{
+    width:83.3333%;
+    background: red;
+}
+.col-9{
+    width:75%;
+    background: red;
+}
+.col-8{
+    width:66.6666%;
+    background: red;
+}
+.col-7{
+    width:58.3333%;
+    background: red;
+}
+.col-6{
+    width:50%;
+    background: red;
+}
+.col-5{
+    width:41.6666%;
+    background: red;
+}
+.col-4{
+    width:33.3333%;
+    background: red;
+}
+.col-3{
+    width:25%;
+    background: red;
+}
+.col-2{
+    width:16.6666%;
+    background: red;
+}
+.col-1{
+    width:8.3333%;
+    background: red;
+}
+@media (max-width:720px){
+    .col-12{
+        width:100%;
+        background: red;
+    }
+    .col-11{
+        width:100%;
+        background: red;
+    }
+    .col-10{
+        width:100%;
+        background: red;
+    }
+    .col-9{
+        width:100%;
+        background: red;
+    }
+    .col-8{
+        width:100%;
+        background: red;
+    }
+    .col-7{
+        width:100%;
+        background: red;
+    }
+    .col-6{
+        width:100%;
+        background: red;
+    }
+    .col-5{
+        width:100%;
+        background: red;
+    }
+    .col-4{
+        width:100%;
+        background: red;
+    }
+    .col-3{
+        width:100%;
+        background: red;
+    }
+    .col-2{
+        width:100%;
+        background: red;
+    }
+    .col-1{
+        width:100%;
+        background: red;
+    }
+}

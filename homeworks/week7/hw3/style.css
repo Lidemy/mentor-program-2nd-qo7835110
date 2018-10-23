@@ -1,0 +1,115 @@
+* ul{
+    list-style: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+body{
+    background:#f0f0f0;
+    font-family: 
+    -apple-system,
+    "Microsoft JhengHei",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.content{
+    max-width: 1366px;
+    margin: 0 auto;
+    text-align: center; 
+}
+.content__article_list_article{
+    background: white;
+    margin: 10px auto;
+    border: #d0d0d0	 2px solid;
+    width: 80%;
+    position: relative;
+}
+.content__article_list_article_content{
+    font-size:26px;
+    width:80%;
+    margin: 10px auto;
+    word-wrap: break-word;
+}
+.content__article_list_article_profile__name{
+    color:blue;
+}
+.content__article_list_article_profile{
+    border-bottom: 1px solid #bfbfbf;
+    width:80%;
+    margin: 20px auto;
+    padding-bottom:10px;
+}
+.content__article_list_article__respond_list{
+    width:80%;
+    margin: 10px auto;
+    padding:0;
+}
+.content__article_list_article__respond_list__article{
+    background: #F3F4F4;
+    margin: 0 auto;
+    width: 100%;
+}
+.content__article_list_article__respond_list__article__profile{
+    font-size:24px;
+    text-align: left;
+    padding-left:10px;
+    margin: 0 auto;
+}
+.content__article_list_article__respond_list__article__profile__name{
+    color:blue;
+}
+.respond_form{
+    display: none;
+    width: 80%;
+    margin: 25px auto;
+}
+.page_bar{
+    width: 80%;
+    margin:20px auto;
+    font-size: 26px;
+}
+.respond_name{
+    margin-bottom: 10px;
+}
+.content__article_list_article_delete{
+    position: absolute;
+    right:10px;
+    top:10px;
+    padding: 2px 10px;
+}
+.content__article_list_article_edit{
+    position: absolute;
+    padding: 2px 10px;
+    right: 70px;
+    top:10px;
+}
+.content__article_list_article__respond_list__article__master{
+    background: rgb(170, 170, 235);
+    margin: 0 auto;
+    width: 100%;
+}
+  @media(max-width:350px) {
+    .content__article_list_article__respond_list__article__profile{
+        font-size: 12px;
+    }
+    .content__article_list_article_profile {
+        font-size: 14px;
+    }
+  }
+  @media(max-width:550px) {
+    .content__article_list_article__respond_list__article__profile{
+        font-size: 14px;
+    }
+    .content__article_list_article_profile {
+        font-size: 14px;
+    }
+  }
+  @media(max-width:910px) {
+
+  }

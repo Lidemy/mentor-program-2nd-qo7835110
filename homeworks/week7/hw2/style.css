@@ -1,3 +1,9 @@
+.container{
+    width:1280px;
+}
+.row{
+    margin: 0 auto;
+}
 .board{
     margin: 0 auto;
 }
