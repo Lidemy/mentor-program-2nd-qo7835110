@@ -77,21 +77,6 @@
                     <p class="content__article_list_article_content"><?php echo htmlspecialchars($row["article"], ENT_QUOTES,'utf-8') ?></p>
                     <ul class="content__article_list_article__respond_list container row" data-id=<?php echo $row["id"]?>>
                         <?php
-                            // if (isset($_POST['respond_name']) && isset($_POST['respond_content']) &&isset($_POST['article_id'])){
-                            //     $respond_name = $_POST['respond_name'];
-                            //     $respond_content = $_POST['respond_content'];
-                            //     $article_id = $_POST['article_id'];
-                            //     $stmt_respond = $conn->prepare("INSERT INTO `qo7835110_comments_responds`(`id`, `user_id`, `article_id`, `nickname`, `article_respond`, `timestamp`) VALUES (null, ?, ?, ?, ?,null)");
-                            //     $stmt_respond->bind_param("ssss", $user_id, $article_id, $respond_name, $respond_content);
-                            //     if($stmt_respond->execute()){
-                            //         unset($_POST);
-                            //         header('Location:index.php');      
-                            //     }
-                            //     else{
-                            //         echo "失敗";
-                            //     }
-                            // }
-                            // $sql_respond_content = "SELECT `user_id`, `nickname`, `article_respond` FROM `qo7835110_comments_responds` WHERE qo7835110_comments_responds.article_id = '$row[id]' ";
                             $stmt_respond_content = $conn->prepare("SELECT `user_id`, `nickname`, `article_respond` FROM `qo7835110_comments_responds` WHERE qo7835110_comments_responds.article_id = ?");
                             $stmt_respond_content->bind_param('s',$row['id']);
                             $stmt_respond_content->execute();
@@ -169,14 +154,6 @@
             }
         })
     })
-    // let delete_btn = document.querySelectorAll('.content__article_list_article_delete');
-    // delete_btn.forEach(function(e){
-    //     e.addEventListener('click',function(x){
-    //         if (!confirm('真的要刪除?')){
-    //             x.preventDefault();
-    //         }
-    //     })
-    // })
     document.querySelector('.content__article_list').addEventListener('click',function(e){
         if(e.target.classList.contains('respond_form_toggle')){
             if (e.target.nextElementSibling.style.display === '' || e.target.nextElementSibling.style.display === 'none'){

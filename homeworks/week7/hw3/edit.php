@@ -1,7 +1,7 @@
 <?php
     require_once('conn.php');
     require_once('session_check.php');
-    if (isset($_COOKIE["user_id"])){
+    if (isset($user_id)){
         if (isset($_POST['nickname']) && isset($_POST['content'])){
             $nickname = $_POST['nickname'];
             $content = $_POST['content'];
