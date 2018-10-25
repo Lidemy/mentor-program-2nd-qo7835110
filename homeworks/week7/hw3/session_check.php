@@ -8,6 +8,6 @@
         $user_id = $stmt_check->get_result()->fetch_assoc()['user_id'];
     }
     else{
-        $user_id = '';
+        $user_id = null;
     }
 ?>
