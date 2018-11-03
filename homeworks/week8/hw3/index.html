@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    const index = function (e) {
+        const obj = e;
+        console.log(obj)
+        const content = `             
+                <ol>
+                    <li>
+                        <div>
+                            <span>
+                                name:產品一
+                            </span>
+                            <span>
+                                剩餘:${obj.product1}
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>
+                                name:產品二
+                            </span>
+                            <span>
+                                剩餘:${obj.product2}
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>
+                                name:產品三
+                            </span>
+                            <span>
+                                剩餘:${obj.product3}
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>
+                                name:產品三
+                            </span>
+                            <span>
+                                剩餘:${obj.product4}
+                            </span>
+                        </div>
+                    </li>
+                </ol>
+                <button class='btn'>checkout</button>
+                `
+        return content;
+    }
+    window.addEventListener('load', function () {
+        fetch('test.php', {
+            method: 'POST',
+            body: JSON.stringify({
+                'load': 'load'
+            })
+        })
+            .then(function (res) {
+                return res.json();
+            })
+            .then((e) => {
+                document.querySelector('body').innerHTML = index(e);
+            })
+    })
+    document.querySelector('body').addEventListener('click', function (e) {
+        if (e.target.className === "btn") {
+            fetch('test.php', {
+                method: 'POST',
+                body: JSON.stringify({
+                    'checkout': '1'
+                })
+            })
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (e) {
+                    document.querySelector('body').innerHTML = index(e)
+                    if (e.error) {
+                        document.querySelector('body').innerHTML = `
+                            <h1>賣光</h1>
+                            <button class='addition'>廠商又加碼啦!!!</button>
+                        `
+                    }
+                })
+                .then(function (err) {
+                    console.log(err);
+                })
+        }
+        if (e.target.className === 'addition') {
+            const boss_say = {
+                'all': 'addition'
+            }
+            fetch('test.php', {
+                method: 'POST',
+                body: JSON.stringify(boss_say)
+            })
+                .then((res) => {
+                    return res.json();
+                })
+                .then((e) => {
+                    document.querySelector('body').innerHTML = index(e)
+                })
+        }
+    })
+</script>
+
+</html>
