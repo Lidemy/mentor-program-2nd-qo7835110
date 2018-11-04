@@ -17,12 +17,12 @@ if(isset(json_decode(file_get_contents('php://input'),true)['load'])){
 }
 //結帳按鈕
 if(isset(json_decode(file_get_contents('php://input'),true)['checkout'])){
-    $stmt = $conn->prepare("SELECT * FROM test WHERE id = '1'");
-    $stmt->execute();
-    $result = $stmt->get_result()->fetch_assoc();
     //transaction
     $conn-> autocommit(FALSE);
     $conn->begin_transaction();
+    $stmt = $conn->prepare("SELECT * FROM test WHERE id = '1' for UPDATE");
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
     $is_success = TRUE;
     if($result['product1'] >0){
         $sql ="UPDATE test SET product1 =$result[product1]-1 WHERE id = '1'";

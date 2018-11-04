@@ -226,9 +226,11 @@
                 url: "delete.php",
                 data: {'id':$(e.target).data("id")},
                 success: function (response) {
-                    console.log(response);
                     if(response === 'success'){
                         $(e.target).parent().parent().remove();
+                    }
+                    else{
+                        console.log(response);
                     }
                 }
             });
