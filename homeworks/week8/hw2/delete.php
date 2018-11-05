@@ -21,21 +21,21 @@
                 $stmt_delete_respond->bind_param('s',$article_id);
                 //執行
                 if($stmt_delete->execute() && $stmt_delete_respond->execute()){
-                    echo "success"nm ;   
+                    echo "success" ;   
                 }
                 else{
-                    echo "<script> alert('刪除失敗');</script>";   
+                    echo "error from delete execute";   
                 }
             }
             else{
-                echo "<script> alert('你無權刪除文章');</script>";
+                echo "error from check user_id";
             }
         }
         else{
-            echo "<script> alert('無法取得文章代碼');</script>";          
+            echo "error from GET";          
         }
     }
     else{
-        echo "<script> alert('尚未登入');</script>";          
+        echo "error from user_id";          
     }
 ?>
