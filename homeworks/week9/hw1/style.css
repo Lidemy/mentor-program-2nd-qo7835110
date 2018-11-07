@@ -1,0 +1,74 @@
+body {
+  background: url("https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg");
+  background-attachment: fixed;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  padding: 40px;
+}
+
+.stream {
+  width: 300px;
+  height: 280px;
+  margin: 20px;
+  overflow: hidden;
+}
+.stream__pic {
+  width: 100%;
+  vertical-align: bottom;
+}
+.stream__streamer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  background: rgba(0, 0, 0, 0.432);
+}
+.stream__streamer__pic {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+.stream__streamer__detail {
+  padding: 0;
+  margin: 5px 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.stream__streamer__detail li {
+  width: 150px;
+  color: white;
+  list-style: none;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.stream__streamer__detail__status {
+  font-size: 28px;
+}
+.stream__streamer__detail:first-child {
+  color: red;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3Quc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlHQUFBO0VBQ0EsNkJBQUE7RUFDQSxVQUFBO0NDQ0Q7O0FERUQ7RUFDRSxzQkFBQTtDQ0NEOztBREVEO0VBQ0UsV0FBQTtFQUNBLGVBQUE7RUFDQSxxQkFBQTtFQUFBLGNBQUE7RUFDQSwwQkFBQTtNQUFBLDhCQUFBO0VBQ0Esb0JBQUE7TUFBQSxnQkFBQTtFQUNBLGNBQUE7Q0NDRDs7QURFRDtFQUNFLGFBQUE7RUFDQSxjQUFBO0VBQ0EsYUFBQTtFQUNBLGlCQUFBO0NDQ0Q7QURBQztFQUNFLFlBQUE7RUFDQSx1QkFBQTtDQ0VIO0FEQUM7RUFDRSxxQkFBQTtFQUFBLGNBQUE7RUFDQSxxQkFBQTtNQUFBLDRCQUFBO0VBQ0EsaUNBQUE7Q0NFSDtBRERHO0VBQ0UsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGFBQUE7Q0NHTDtBRERHO0VBQ0UsV0FBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7RUFBQSxjQUFBO0VBQ0Esb0JBQUE7TUFBQSxnQkFBQTtFQUNBLHNCQUFBO01BQUEsd0JBQUE7RUFDQSx1QkFBQTtNQUFBLG9CQUFBO0NDR0w7QURGSztFQUNFLGFBQUE7RUFDQSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxtQkFBQTtFQUNBLG9CQUFBO0VBQ0EsaUJBQUE7RUFDQSx3QkFBQTtDQ0lQO0FERks7RUFDRSxnQkFBQTtDQ0lQO0FEREc7RUFDRSxXQUFBO0NDR0w7QUFDRDtFQUNFLHFCQUFjO0VBQWQsY0FBYztFQUNkLFVBQVU7RUFDVix1QkFBdUI7O0NBRXhCIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
