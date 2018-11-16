@@ -1,0 +1,64 @@
+body {
+  background: url('https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg');
+  background-attachment: fixed;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  padding: 40px;
+}
+
+.stream {
+  width: 300px;
+  height: 280px;
+  margin: 20px;
+  overflow: hidden;
+  &__pic{
+    width: 100%;
+    vertical-align: bottom;
+  }
+  &__streamer{
+    display: flex;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.432);
+    &__pic{
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      margin: 10px;
+    }
+    &__detail{
+      padding: 0;
+      margin: 5px 20px;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      align-items: center;
+      li{
+        width: 150px;
+        color: white;
+        list-style: none;
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &__status{
+        font-size: 28px;
+      }
+    }
+    &__detail:first-child{
+      color: red;
+    }
+  }
+}
+
