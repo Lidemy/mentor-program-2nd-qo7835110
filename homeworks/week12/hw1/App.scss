@@ -1,0 +1,77 @@
+* li{
+  list-style: none;
+}
+#root{
+  max-width:1280px;
+  margin: 0 auto;
+}
+
+.todolist{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  background: gray;
+  margin-top:1em;
+  padding-top:1em;
+  &__change-list{
+    min-width: 80%;
+    display: flex;
+    justify-content: center;
+    button{
+      margin:1em;
+      min-width:  4em;
+      border: none;
+    }
+  }
+  &__todo-value{
+    max-width: 50%;
+    margin: 0 20px;
+  }
+  &__btn{
+    min-width: 3%;
+  }
+  &__ul{
+    padding: 0px;
+    min-width: 80%;
+    &__item {
+      background: rgb(49, 154, 180);
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      max-width: 60%;
+    }
+    &__item-finished {
+      background: rgba(255, 0, 0, 0.589);
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      max-width: 60%;
+    }
+    &__item-checkbox{
+      background:rgba(110, 209, 110, 0.493);
+      min-width: 4em;
+      border:none;
+      
+    }
+    &__item-checkbox-finished{
+      background:rgba(0, 128, 0, 1);
+      min-width: 4em;
+      border:none;
+      color:white;
+    }
+    &__item-content{
+      margin-left: 1em;
+      color: white;
+      font-size: 18px;
+      word-break: break-all;
+    }
+    &__item-btn{
+      min-width: 50px;
+      background:rgba(169, 194, 60, 0.651);
+      border:none;
+    }
+  }
+}
