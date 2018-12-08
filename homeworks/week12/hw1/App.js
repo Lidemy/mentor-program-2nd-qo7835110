@@ -9,7 +9,7 @@ class Todos extends Component {
   render() {
     return (
       <li className={this.props.todo.check ? 'todolist__ul__item-finished' : 'todolist__ul__item'} >
-        <Checkbox checkClick={this.props.checkClick} todo={this.props.todo} num={this.props.num} />
+        <Checkbox checkClick={this.props.checkClick} todo={this.props.todo} id={this.props.id} />
         <span className="todolist__ul__item-content">
           {this.props.todo.value}
         </span>
@@ -21,7 +21,7 @@ class Todos extends Component {
 
 class Checkbox extends Component {
   checkClick = () => {
-    this.props.checkClick(this.props.num)
+    this.props.checkClick(this.props.id)
   }
   render() {
     return (
@@ -91,8 +91,9 @@ class App extends React.Component {
     })
 
   }
-  handleClick = (index) => {
+  handleClick = (id) => {
     let array = [...this.state.todoArray];
+    let index = array.findIndex((item) => item.id === id);
     array[index].check = !array[index].check;
     this.setState({
       todoArray: array
@@ -113,45 +114,28 @@ class App extends React.Component {
         <button className="todolist__btn" onClick={this.AddTodo}>click</button>
         <ChangList change={this.changeState} />
         <ul className="todolist__ul">
-          {this.state.todoArray.map((item, index) => {
+          {this.state.todoArray.filter((item) => {
             if (this.state.changeState === 'all') {
-              return (
-                <div key={item.value + index}>
-                  <Todos
-                    todo={item}
-                    delete={this.deleteClick}
-                    checkClick={this.handleClick}
-                    num={index}>
-                  </Todos>
-                </div >
-              )
+              return 1
             }
-            else if (this.state.changeState === 'unfinished' && !item.check) {
-              return (
-                <div key={item.value + index}>
-                  <Todos
-                    todo={item}
-                    delete={this.deleteClick}
-                    checkClick={this.handleClick}
-                    num={index}>
-                  </Todos>
-                </div >
-              )
+            else if (this.state.changeState === 'unfinished') {
+              return !item.check
             }
-            else if (this.state.changeState === 'finished' && item.check) {
-              return (
-                <div key={item.value + index}>
-                  <Todos
-                    todo={item}
-                    delete={this.deleteClick}
-                    checkClick={this.handleClick}
-                    num={index}>
-                  </Todos>
-                </div >
-              )
+            else if (this.state.changeState === 'finished') {
+              return item.check
             }
-            //出現警告一定要在箭頭函數結束加一個 return (Expected to return a value at the end of arrow function  array-callback-return)
-            return null
+            return null;
+          }).map((item, index) => {
+            return (
+              <Todos
+                key={item.value + index}
+                todo={item}
+                id={item.id}
+                delete={this.deleteClick}
+                checkClick={this.handleClick}
+                num={index}>
+              </Todos>
+            )
           })}
         </ul>
       </div>
